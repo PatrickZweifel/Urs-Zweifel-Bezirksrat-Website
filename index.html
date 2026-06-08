@@ -7,6 +7,7 @@
   <title>Urs Zweifel – Bezirksrat</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
 <header class="hero">
@@ -45,41 +46,24 @@
     </p>
 
     <div class="gallery">
-      <button class="gallery-btn" onclick="changeSlide(-1)">❮</button>
 
-      <img id="gallery-image" src="bilder/weg.jpg" alt="Urs Zweifel">
+      <img id="gallery-image"
+          src="bilder/weg.jpg"
+          alt="Urs Zweifel">
 
-      <button class="gallery-btn" onclick="changeSlide(1)">❯</button>
-  
+      <p id="gallery-caption">
+        Abendspaziergang beim "Himmelsleiterli".
+      </p>
+
+      <div class="gallery-dots">
+        <span class="dot active" onclick="showSlide(0)"></span>
+        <span class="dot" onclick="showSlide(1)"></span>
+        <span class="dot" onclick="showSlide(2)"></span>
+        <span class="dot" onclick="showSlide(3)"></span>
+      </div>
+
     </div>
   </section>
-
-  <script>
-  const images = [
-    "bilder/weg.jpg",
-    "bilder/blumen.jpg",
-    "bilder/hafen.jpg",
-    "bilder/see.jpg"
-  ];
-
-  let currentImage = 0;
-
-  function changeSlide(direction) {
-    currentImage += direction;
-
-    if (currentImage < 0) {
-      currentImage = images.length - 1;
-    }
-
-    if (currentImage >= images.length) {
-      currentImage = 0;
-    }
-
-    document.getElementById("gallery-image").src =
-      images[currentImage];
-  }
-  </script>
-
 
   <section id="haltung" class="section alt">
     <h2>Wofür ich stehe</h2>
@@ -144,5 +128,49 @@
   <p>© 2026 Urs Zweifel · urszweifel.ch</p>
 </footer>
 
+<script>
+const images = [
+  "bilder/weg.jpg",
+  "bilder/hafen.jpg",
+  "bilder/see.jpg",
+  "bilder/blumen.jpg"
+];
+
+const captions = [
+  "Abendspaziergang beim 'Himmelsleiterli'",
+  "Hafen in Frontignan, Frankreich",
+  "Gewässer in Frontignan, Frankreich",
+  "Blumen in Frontignan, Frankreich"
+];
+
+let currentImage = 0;
+let slideInterval = setInterval(nextSlide, 6000);
+
+function showSlide(index) {
+  currentImage = index;
+
+  document.getElementById("gallery-image").src = images[index];
+  document.getElementById("gallery-caption").textContent = captions[index];
+
+  document.querySelectorAll(".dot").forEach(dot => {
+    dot.classList.remove("active");
+  });
+
+  document.querySelectorAll(".dot")[index].classList.add("active");
+
+  clearInterval(slideInterval);
+  slideInterval = setInterval(nextSlide, 6000);
+}
+
+function nextSlide() {
+  currentImage++;
+
+  if (currentImage >= images.length) {
+    currentImage = 0;
+  }
+
+  showSlide(currentImage);
+}
+</script>
 </body>
 </html>
