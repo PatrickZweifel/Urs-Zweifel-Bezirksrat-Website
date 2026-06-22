@@ -21,6 +21,15 @@ body {
   padding: 28px;
 }
 
+/* Mobile hero adjustment */
+@media (max-width: 600px) {
+  .hero {
+    background:
+      linear-gradient(rgba(10, 20, 35, 0.45), rgba(10, 20, 35, 0.55)),
+      url("urs-zweifel-mobile.jpg") center/cover no-repeat;
+  }
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -229,4 +238,168 @@ footer {
 .dot.active {
   background-color: #12355b;
   transform: scale(1.25);
+}
+
+/* Responsive improvements: tablet + mobile */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .hero {
+    min-height: 85vh;
+    padding: 22px;
+  }
+
+  .hero-card {
+    max-width: 620px;
+    padding: 36px 28px;
+  }
+
+  h1 {
+    font-size: clamp(2.8rem, 11vw, 5rem);
+  }
+
+  .hero-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .section {
+    padding: 70px 24px;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+  }
+
+  .section p {
+    font-size: 1.08rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .card {
+    padding: 24px;
+  }
+
+  .gallery img {
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hero {
+    min-height: 78vh;
+    padding: 16px;
+  }
+
+  .nav {
+    display: block;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero-card {
+    margin-top: auto;
+    margin-bottom: 24px;
+    padding: 26px 20px;
+    border-radius: 18px;
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .hero-card h2 {
+    font-size: 1.25rem;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+    padding: 13px 20px;
+  }
+
+  .section {
+    padding: 55px 18px;
+  }
+
+  .section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 18px;
+  }
+
+  .section p {
+    font-size: 1.02rem;
+  }
+
+  .card {
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  .highlight {
+    border-radius: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .gallery {
+    margin-top: 35px;
+  }
+
+  .gallery img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 16px;
+  }
+
+  #gallery-caption {
+    font-size: 1rem;
+    padding: 0 8px;
+  }
+
+  .gallery-dots {
+    gap: 10px;
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  footer {
+    font-size: 0.9rem;
+    padding: 26px 18px;
+  }
 }
