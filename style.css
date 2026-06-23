@@ -146,9 +146,14 @@ h1 {
 .highlight {
   background: #12355b;
   color: white;
-  border-radius: 28px;
-  margin-top: 40px;
-  margin-bottom: 40px;
+  max-width: 650px;
+  margin: 50px auto;
+
+  padding: 35px 30px;
+
+  border-radius: 20px;
+
+  text-align: center;
 }
 
 .highlight h2 {
