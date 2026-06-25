@@ -162,10 +162,19 @@ Gemeindebehörden).
     </p>
 
     <div class="gallery">
+        <button class="gallery-arrow left"
+            onclick="previousSlide()">
+        &#10094;
+      </button>
 
       <img id="gallery-image"
           src="bilder/weg.jpg"
           alt="Urs Zweifel">
+
+      <button class="gallery-arrow right"
+            onclick="nextSlide()">
+        &#10095;
+      </button>
 
       <p id="gallery-caption">
         Abendspaziergang beim "Himmelsleiterli".
@@ -234,6 +243,17 @@ function nextSlide() {
   }
 
   showSlide(currentImage);
+}
+
+function previousSlide() {
+
+    currentImage--;
+
+    if (currentImage < 0) {
+        currentImage = images.length - 1;
+    }
+
+    showSlide(currentImage);
 }
 </script>
 </body>
