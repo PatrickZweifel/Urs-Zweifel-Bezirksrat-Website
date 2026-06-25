@@ -109,6 +109,12 @@ h1 {
   color: #12355b;
 }
 
+.section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+  color: #12355b;
+}
+
 .section p {
   font-size: 1.15rem;
   margin-bottom: 18px;
