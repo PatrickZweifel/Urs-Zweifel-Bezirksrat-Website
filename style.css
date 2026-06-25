@@ -233,11 +233,28 @@ footer {
 .gallery img {
     width: 100%;
     max-width: 850px;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
+
+    height: 600px;
+
+    object-fit: contain;
     object-position: center center;
+
+    background: #f6f7f9;
+
     border-radius: 20px;
     box-shadow: 0 15px 40px rgba(0,0,0,.15);
+
+    transition: opacity .25s ease;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+@media (max-width: 900px) {
+    .gallery img {
+        height: 450px;
+    }
 }
 
 .gallery-arrow {
@@ -519,14 +536,8 @@ html {
   }
 
   .gallery img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    object-position: center center;
-    border-radius: 16px;
-  }
+        height: 340px;
+    }
 
   #gallery-caption {
     font-size: 1rem;
